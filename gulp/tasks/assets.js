@@ -38,7 +38,7 @@ gulp.task('scripts', () =>
     'src/assets/javascript/jquery.parallax-1.1.3.js',
     'src/assets/javascript/jquery.fitvids.js',
     'src/assets/javascript/owl.carousel.min.js',
-    'src/assets/javascript/isotope.pkgd.min.js',
+    'src/assets/javascript/isotope.pkgd.js',
     'src/assets/javascript/imagesloaded.pkgd.min.js',
     'src/assets/javascript/jquery.magnific-popup.min.js',
     'src/assets/javascript/gmap3.min.js',
@@ -57,7 +57,7 @@ gulp.task('scripts', () =>
       showFiles: true
     }))
     .pipe(when(argv.prod, rename({suffix: '.min'})))
-    .pipe(when(argv.prod, when('*.js', uglify({preserveComments: 'some'}))))
+    //.pipe(when(argv.prod, when('*.js', uglify({preserveComments: 'some'}))))
     .pipe(when(argv.prod, size({
       showFiles: true
     })))
