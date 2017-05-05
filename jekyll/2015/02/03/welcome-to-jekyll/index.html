@@ -22,10 +22,27 @@
 <span class=c1>#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure><p>Check out the <a href=http://jekyllrb.com/docs/home/ >Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href=https://github.com/jekyll/jekyll>Jekyll&rsquo;s GitHub repo</a>.</p><div class=footnotes><hr><ol><li id=fn1><p>Who are quite handy&nbsp;<a href=#fnref1 rev=footnote>&#8617;</a></p></li></ol></div></div></article><footer class="page-section footer pb-60"><div class=container><div class="footer-social-links mb-50 mb-xs-50 wow fadeInUp" data-wow-duration=1.5s><a href=http://www.facebook.com/ambergarage title=Facebook target=_blank><i class="fa fa-facebook"></i></a> <a href=http://www.instagram.com/amber.garage title=Instagram target=_blank><i class="fa fa-instagram"></i></a> <a href=http://www.youtube.com/ambergarage title=Youtube target=_blank><i class="fa fa-youtube"></i></a> <a href=http://vimeo.com/ambergarage title=Vimeo target=_blank><i class="fa fa-vimeo-square"></i></a> <a href=http://twitter.com/ambergarage title=Twitter target=_blank><i class="fa fa-twitter"></i></a></div><div class=footer-text><div class="footer-copy font-alt"><a href=https://ambergarage.com target=_blank>&copy; Amber Garage. 2016</a>.</div><div class=footer-made>a Silicon Valley based creative art &amp; tech studio</div></div></div><div class=local-scroll><a href=#top class=link-to-top><i class="fa fa-caret-up"></i></a></div></footer></div><script src=/ambergarage_website/assets/javascript/index-9cc9a6179b.min.js></script><script>// Video Init
 
   $(document).ready(function(){
+
+   
   $("#skywand_menu_btn").click(function (e) {
       var owl = $("#home").data("owlCarousel");
       owl.goTo(0);
   });
+
+     
+  $("#cityvr_menu_btn").click(function (e) {
+      var owl = $("#home").data("owlCarousel");
+      owl.goTo(0);
+  });
+
+     
+  $("#airgraphy_menu_btn").click(function (e) {
+      var owl = $("#home").data("owlCarousel");
+      owl.goTo(0);
+  });
+
+  
+  /*
   $("#cityvr_menu_btn").click(function (e) {
       var owl = $("#home").data("owlCarousel");
       owl.goTo(1);
@@ -34,8 +51,31 @@
       var owl = $("#home").data("owlCarousel");
       owl.goTo(2);
   });
-
+*/
 if (!($("html").hasClass("mobile"))){
+   
+    var videobackground_skywand = new $.backgroundVideo($('#video-background-skywand'), {
+        "align": "centerXY",
+        "width": 1920,
+        "height": 1080,
+        "path": "assets/images/video/",
+        "filename": "skywand",
+        "types": ["webm", "mp4"],
+        "autoplay": true,
+        "loop": true
+    });
+   
+    var videobackground_cityvr = new $.backgroundVideo($('#video-background-cityvr'), {
+        "align": "centerXY",
+        "width": 1920,
+        "height": 1080,
+        "path": "assets/images/video/",
+        "filename": "cityvr",
+        "types": ["webm", "mp4"],
+        "autoplay": true,
+        "loop": true
+    });
+   
     var videobackground_airgraphy = new $.backgroundVideo($('#video-background-airgraphy'), {
         "align": "centerXY",
         "width": 1920,
@@ -46,6 +86,8 @@ if (!($("html").hasClass("mobile"))){
         "autoplay": true,
         "loop": true
     });
+  
+  /*
     var videobackground_cityvr = new $.backgroundVideo($('#video-background-cityvr'), {
         "align": "centerXY",
         "width": 1920,
@@ -66,5 +108,6 @@ if (!($("html").hasClass("mobile"))){
         "autoplay": true,
         "loop": true
     });
+    */
 }
 });</script></body></html>
