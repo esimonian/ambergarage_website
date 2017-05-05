@@ -26,10 +26,15 @@
     // Video Init
 
   $(document).ready(function(){
-  $("#skywand_menu_btn").click(function (e) {
+
+{% for project in site.data.projects %}   
+  $("#{{project.name}}_menu_btn").click(function (e) {
       var owl = $("#home").data("owlCarousel");
       owl.goTo(0);
   });
+
+  {% endfor %}
+  /*
   $("#cityvr_menu_btn").click(function (e) {
       var owl = $("#home").data("owlCarousel");
       owl.goTo(1);
@@ -38,18 +43,21 @@
       var owl = $("#home").data("owlCarousel");
       owl.goTo(2);
   });
-
+*/
 if (!($("html").hasClass("mobile"))){
-    var videobackground_airgraphy = new $.backgroundVideo($('#video-background-airgraphy'), {
+  {% for project in site.data.projects %} 
+    var videobackground_{{project.name}} = new $.backgroundVideo($('#video-background-{{project.name}}'), {
         "align": "centerXY",
         "width": 1920,
         "height": 1080,
         "path": "assets/images/video/",
-        "filename": "airgraphy",
+        "filename": "{{project.name}}",
         "types": ["webm", "mp4"],
         "autoplay": true,
         "loop": true
     });
+  {% endfor %}
+  /*
     var videobackground_cityvr = new $.backgroundVideo($('#video-background-cityvr'), {
         "align": "centerXY",
         "width": 1920,
@@ -70,6 +78,7 @@ if (!($("html").hasClass("mobile"))){
         "autoplay": true,
         "loop": true
     });
+    */
 }
 });
 </script>

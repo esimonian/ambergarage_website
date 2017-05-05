@@ -1,0 +1,26 @@
+- name: skywand
+  uppertagline: 
+  title: Skywand
+  tagline: IMMERSIVE MOTION CONTROL FOR AERIAL CINEMATOGRAPHY
+  videourl: https://vimeo.com/163223379
+  buttons: 
+    - text: Visit skywand.com
+      url: https://skywand.com
+- name: cityvr
+  uppertagline: Redefine the way we experience 3D maps
+  title: The City VR Experience
+  tagline: Walk like a giant alongside skyscrapers
+  videourl: https://vimeo.com/184466672
+  buttons: 
+    - text: Available on Steam
+      url: https://store.steampowered.com/app/517990/
+    - text: Visit cityvr.com
+      url: https://cityvr.com
+- name: airgraphy
+  uppertagline: 
+  title: airgraphy
+  tagline: "Augmented Reality Light Painting <br> powered by Skywand"
+  videourl: 
+  buttons: 
+    - text: Coming soon to DJI Drones
+      url: #

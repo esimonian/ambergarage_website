@@ -4,38 +4,46 @@ layout: default
 
 <!-- Fullwidth Slider -->
 <div class="home-section fullwidth-slider bg-dark" id="home">
-                    
+           {% for project in site.data.projects %}         
     <!-- Slide Item -->
-    <section class="home-section bg-scroll bg-dark-alfa-30 bg-pattern-over" data-background="assets/images/video/skywand.jpg" id="skywand">
+    <section class="home-section bg-scroll bg-dark-alfa-30 bg-pattern-over" data-background="assets/images/video/{{project.name}}.jpg" id="{{project.name}}">
         <div class="js-height-full container  ">
             
-            <div class="bg-video-wrapper" id="video-background-skywand">
+            <div class="bg-video-wrapper" id="video-background-{{project.title}}">
                 <div class="bg-video-overlay bg-pattern-over"></div>
             </div>
 
             <!-- Hero Content -->
             <div class="home-content">
                 <div class="home-text">
+                    <div class="hs-line-4 no-transp font-alt mb-50 mb-xs-30">
+                        {{project.uppertagline}}
+                    </div>  
                     
                     <h1 class="hs-line-14 font-alt mb-50 mb-xs-30">
-                        Skywand
+                        {{project.title}}
                     </h1>
 
                     <h2 class="hs-line-4 no-transp font-alt mb-50 mb-xs-30">
-                        IMMERSIVE MOTION CONTROL FOR AERIAL CINEMATOGRAPHY
+                        {{project.tagline}}
                     </h2>                       
-                    
+                    {% if project.videourl%}
                     <div>
-                    <a href="https://vimeo.com/163223379" class="big-icon-link lightbox mfp-iframe"><span class="big-icon"><i class="fa fa-play"></i></span></a>
+                    <a href="{{project.videourl}}" class="big-icon-link lightbox mfp-iframe"><span class="big-icon"><i class="fa fa-play"></i></span></a>
                     </div>
+                    {% endif %}
 
                     <h1>
                     </h1>
-                    <div>
-                        <a href="https://skywand.com" target="_blank" class="btn btn-mod btn-w btn-medium btn-round">Visit skywand.com</a>
-                        <span class="hidden-xs">&nbsp;</span>
-                    </div>
                     
+                    <div>
+                   
+                    {% for button in project.buttons %}  
+                        <a href="{{button.url}}" target="_blank" class="btn btn-mod btn-w btn-medium btn-round">{{button.text}}</a>
+                        <span class="hidden-xs">&nbsp;</span>
+                    {% endfor %}
+                    </div>
+                     
                 </div>
             </div>
             <!-- End Hero Content -->
@@ -43,8 +51,10 @@ layout: default
         </div>
     </section>
     <!-- End Slide Item -->
+    {% endfor %}
 
      <!-- Slide Item -->
+     <!--
     <section class="home-section bg-scroll bg-dark-alfa-30 bg-pattern-over" data-background="assets/images/video/cityvr.jpg" id="cityvr">
         <div class="js-height-full container">
 
@@ -52,7 +62,7 @@ layout: default
                 <div class="bg-video-overlay bg-pattern-over"></div>
             </div>
 
-            <!-- Hero Content -->
+            <!-- Hero Content 
             <div class="home-content">
                 <div class="home-text" >
                     <div class="hs-line-4 no-transp font-alt mb-50 mb-xs-30">
@@ -82,22 +92,22 @@ layout: default
                     </div>
                     
                 </div>
-            </div>
+            </div>-->
             <!-- End Hero Content -->
 
         </div>
-    </section>
-    <!-- End Slide Item -->
+   <!-- </section>
+  End Slide Item -->
 
     <!-- Slide Item -->
-    <section class="home-section bg-scroll bg-dark-alfa-30 bg-pattern-over" data-background="assets/images/video/airgraphy.jpg" id="airgraphy">
+ <!--   <section class="home-section bg-scroll bg-dark-alfa-30 bg-pattern-over" data-background="assets/images/video/airgraphy.jpg" id="airgraphy">
         <div class="js-height-full container">
 
             <div class="bg-video-wrapper" id="video-background-airgraphy">
                 <div class="bg-video-overlay bg-pattern-over "></div>
             </div>
 
-            <!-- Hero Content -->
+            <!-- Hero Content 
             <div class="home-content">
                 <div class="home-text">
                     
@@ -116,7 +126,7 @@ layout: default
                     <div>
                     <a href="" class="big-icon-link lightbox mfp-iframe"><span class="big-icon"><i class="fa fa-play"></i></span></a>
                     </div> -->
-
+<!--
                     <h1>
                     </h1>
                     <div>
@@ -126,10 +136,11 @@ layout: default
                     
                 </div>
             </div>
+-->
             <!-- End Hero Content -->
             
         </div>
-    </section>
+  <!--  </section>-->
     <!-- End Slide Item --> 
 
 </div>
@@ -152,16 +163,9 @@ layout: default
         <div class="section-text col-md-8 col-md-offset-2 mb-50 mb-sm-20">
             <div class="row">
                 <div>
-                    Amber Garage is a Silicon Valley based creative art &amp; tech studio. We love photography, nature, new media art, and robotics. 
-                    As artists, we're creating our own art language to bridge the gap between virtual world and reality.
-                    As photographers, we're exploring a solution to put our camera anytime anywhere on the planet to capture the beauty of our beloved world. 
-                    As roboticist, we're thinking how robotics technology can revolutionize the process of creative works. 
-                
-
-                    <br>
-                    <br>
+                {% capture about_md %}{% include about-section.md %}{% endcapture %}
+                {{ about_md | markdownify }}
                     
-                    We created <a href="https://skywand.com" target="_blank">Skywand</a> as a new art media to bridge the virtual world and the real world, which enables awesome creative projects that people could never imagine before. All our creative projects will be based on Skywand technologies: <a href="https://cityvr.com" target="_blank">The City VR Experience</a> and Airgraphy.
 
                 </div>
             </div>
